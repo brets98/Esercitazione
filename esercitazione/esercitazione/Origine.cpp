@@ -11,7 +11,20 @@ int main() {
 		n = n / 2;
 		
 	}
-	cout << r;
+	cout << r << endl;
+	//da binario a decimale 
+	cout << "Ciao\nInserisci un numero in binario  \n";
+	int m, f = 0, j = 1;
+	cin >> m;
+	while (m != 0) {
+		if (m % 2) f = f + j;
+		j = j * 2;
+		m = m / 10;
+
+	}
+	cout << f;
+	
+
 
 	system("pause");
 }
