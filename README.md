@@ -1,0 +1,2 @@
+# Esercitazione
+Esercitazione per programmazione 
