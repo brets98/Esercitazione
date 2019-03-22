@@ -1,30 +1,54 @@
 #include <iostream>
+#include<ctime>
+
 using namespace std;
- // da intero a decimale 
+//media numeri e passaggio si array come variabili 
+
+double everage(const int a, int v[]);
+void ordinamento(const int a, int v[]);
 int main() {
-	cout << "Ciao\nInserisci un numero in decimale \n";
-	int n,r=0,i=1;
-	cin >> n;
-	while (n!=0) {
-		if (n % 2) r = r + i;
-		i = i * 10;
-		n = n / 2;
-		
-	}
-	cout << r << endl;
-	//da binario a decimale 
-	cout << "Ciao\nInserisci un numero in binario  \n";
-	int m, f = 0, j = 1;
-	cin >> m;
-	while (m != 0) {
-		if (m % 2) f = f + j;
-		j = j * 2;
-		m = m / 10;
+	const int	lunghezza = 20;
+	int A,a[lunghezza]; 
+	srand((unsigned)time(NULL));
+	A = rand() % 100;	
+	for (int i = 0; i < lunghezza; i++) {
+		a[i]= A = rand() % 100;
+		cout << a[i] << endl;
 
 	}
-	cout << f;
-	
+	double ciao = everage(lunghezza, a);
+	cout << "Media:" << ciao << endl;
 
-
+	ordinamento(lunghezza, a);
 	system("pause");
+}
+
+double everage(const int a, int v[]) {
+	int somma = 0;
+	for (int i = 0; i < a; i++) {
+		somma = somma + v[i];
+	}
+	double media = somma / 20;
+	return (media);
+
+}
+
+
+void ordinamento(const int a, int v[])
+{
+	int j = 0;
+	int tmp=0;
+	for (int i = 0; i < a; i++) {
+		for (j = i+1; j < a; j++) {
+			if (v[j] < v[i]) {
+				tmp = v[i];
+				v[i] = v[j];
+				v[j] = tmp;
+			}
+		}
+
+	}
+	for (int i = 0; i < a; i++) {
+		cout << v[i] << endl;
+	}
 }
